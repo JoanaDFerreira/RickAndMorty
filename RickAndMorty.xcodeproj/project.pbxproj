@@ -10,6 +10,8 @@
 		F425571F2CCA85EC00C70B07 /* RMCharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F425571E2CCA85EC00C70B07 /* RMCharacterListViewViewModel.swift */; };
 		F42557212CCA86CE00C70B07 /* RMCharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42557202CCA86CE00C70B07 /* RMCharacterListView.swift */; };
 		F42557242CCA8E0600C70B07 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42557232CCA8E0600C70B07 /* UIView+Ext.swift */; };
+		F42557262CCA935000C70B07 /* RMCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42557252CCA935000C70B07 /* RMCharacterCollectionViewCell.swift */; };
+		F42557282CCA942900C70B07 /* RMCharacterCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42557272CCA942900C70B07 /* RMCharacterCollectionViewCellViewModel.swift */; };
 		F48F64BE2CC816BD0019AE65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F64BD2CC816BD0019AE65 /* AppDelegate.swift */; };
 		F48F64C02CC816BD0019AE65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F64BF2CC816BD0019AE65 /* SceneDelegate.swift */; };
 		F48F64C22CC816BD0019AE65 /* RMTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48F64C12CC816BD0019AE65 /* RMTabBarVC.swift */; };
@@ -58,6 +60,8 @@
 		F425571E2CCA85EC00C70B07 /* RMCharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		F42557202CCA86CE00C70B07 /* RMCharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterListView.swift; sourceTree = "<group>"; };
 		F42557232CCA8E0600C70B07 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		F42557252CCA935000C70B07 /* RMCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		F42557272CCA942900C70B07 /* RMCharacterCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCharacterCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		F48F64BA2CC816BD0019AE65 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48F64BD2CC816BD0019AE65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F48F64BF2CC816BD0019AE65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F42557292CCA9AF200C70B07 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		F48F64B12CC816BD0019AE65 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 		F48F64BC2CC816BD0019AE65 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				F42557292CCA9AF200C70B07 /* Managers */,
 				F48F64ED2CC818990019AE65 /* Main */,
 				F48F65012CC828140019AE65 /* Resources */,
 				F48F64F22CC8215E0019AE65 /* Screens */,
@@ -191,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				F425571E2CCA85EC00C70B07 /* RMCharacterListViewViewModel.swift */,
+				F42557272CCA942900C70B07 /* RMCharacterCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				F42557202CCA86CE00C70B07 /* RMCharacterListView.swift */,
+				F42557252CCA935000C70B07 /* RMCharacterCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,10 +413,12 @@
 				F48F65112CC958A80019AE65 /* RMLocation.swift in Sources */,
 				F48F650B2CC918DF0019AE65 /* RMService.swift in Sources */,
 				F42557242CCA8E0600C70B07 /* UIView+Ext.swift in Sources */,
+				F42557282CCA942900C70B07 /* RMCharacterCollectionViewCellViewModel.swift in Sources */,
 				F48F64C22CC816BD0019AE65 /* RMTabBarVC.swift in Sources */,
 				F42557212CCA86CE00C70B07 /* RMCharacterListView.swift in Sources */,
 				F48F65132CC958B50019AE65 /* RMEpisode.swift in Sources */,
 				F48F64BE2CC816BD0019AE65 /* AppDelegate.swift in Sources */,
+				F42557262CCA935000C70B07 /* RMCharacterCollectionViewCell.swift in Sources */,
 				F48F65052CC911690019AE65 /* RMEpisodesVC.swift in Sources */,
 				F48F650F2CC956BF0019AE65 /* RMEndpoint.swift in Sources */,
 				F48F65152CC958BC0019AE65 /* RMCharacter.swift in Sources */,
