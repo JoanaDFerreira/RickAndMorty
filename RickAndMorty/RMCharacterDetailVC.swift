@@ -17,7 +17,7 @@ class RMCharacterDetailVC: UIViewController {
 
     init(viewModel: RMCharacterDetailViewViewModel) {
         self.viewModel = viewModel
-        self.detailView = RMCharacterDetailView(frame: .zero, viewModel: viewModel)
+        self.detailView = RMCharacterDetailView(frame: .zero)
         super.init(nibName: nil, bundle: nil)
     }
     
