@@ -39,6 +39,7 @@ class RMCharacterListView: UIView {
         setupViews()
         spinner.startAnimating()
         
+        viewModel.delegate = self
         viewModel.fetchCharacters()
         
         collectionView.dataSource = viewModel
@@ -65,4 +66,16 @@ class RMCharacterListView: UIView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
+}
+
+extension RMCharacterListView: RMCharacterListViewViewModelDelegate {
+    func didLoadInitialCharacters() {
+        spinner.stopAnimating()
+        collectionView.isHidden = false
+        collectionView.reloadData() // Initial fetch
+        UIView.animate(withDuration: 0.4) {
+            self.collectionView.alpha = 1
+        }
+    }
+
 }

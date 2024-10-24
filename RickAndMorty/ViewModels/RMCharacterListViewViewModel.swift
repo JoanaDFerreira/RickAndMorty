@@ -7,8 +7,30 @@
 
 import UIKit
 
+protocol RMCharacterListViewViewModelDelegate: AnyObject {
+    func didLoadInitialCharacters()
+}
+
 /// View Model to handle character list view logic
 final class RMCharacterListViewViewModel: NSObject {
+    
+    public weak var delegate: RMCharacterListViewViewModelDelegate?
+    
+    private var characters: [RMCharacter] = [] {
+        didSet {
+            for character in characters {
+                let viewModel = RMCharacterCollectionViewCellViewModel(
+                    characterName: character.name,
+                    characterStatus: character.status,
+                    characterImageUrl: URL(string: character.image)
+                )
+                
+                cellViewModels.append(viewModel)
+            }
+        }
+    }
+
+    private var cellViewModels: [RMCharacterCollectionViewCellViewModel] = []
     
     /// Fetch initial set of characters (20)
     public func fetchCharacters() {
@@ -19,6 +41,10 @@ final class RMCharacterListViewViewModel: NSObject {
             switch result {
             case .success(let responseModel):
                 let results = responseModel.results
+                self?.characters = results
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
                 print(String(describing: results))
             case .failure(let error):
                 print(String(describing: error))
@@ -29,7 +55,7 @@ final class RMCharacterListViewViewModel: NSObject {
 
 extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return cellViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -40,7 +66,7 @@ extension RMCharacterListViewViewModel: UICollectionViewDataSource, UICollection
             fatalError("Unsupported cell")
         }
         
-//        cell.configure(with: ])
+        cell.configure(with: cellViewModels[indexPath.row])
         
         return cell
     }

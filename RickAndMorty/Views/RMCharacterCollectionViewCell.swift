@@ -83,6 +83,11 @@ final class RMCharacterCollectionViewCell: UICollectionViewCell {
         ])
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setupLayer()
+    }
+    
     override func prepareForReuse() {
        super.prepareForReuse()
        imageView.image = nil

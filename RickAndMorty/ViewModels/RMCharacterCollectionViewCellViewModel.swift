@@ -25,7 +25,7 @@ final class RMCharacterCollectionViewCellViewModel {
     }
     
     public var characterStatusText: String {
-        return "Status: \(characterStatus.rawValue)"
+        return "Status: \(characterStatus.text)"
     }
     
     public func fetchImage(completion: @escaping (Result<Data, Error>) -> Void) {
@@ -33,6 +33,7 @@ final class RMCharacterCollectionViewCellViewModel {
             completion(.failure(URLError(.badURL)))
             return
         }
-        //download image
+        
+        RMImageLoader.shared.downloadImage(url, completion: completion)
     }
 }
