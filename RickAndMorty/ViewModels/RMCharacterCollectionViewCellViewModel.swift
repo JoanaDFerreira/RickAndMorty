@@ -37,3 +37,18 @@ final class RMCharacterCollectionViewCellViewModel {
         RMImageLoader.shared.downloadImage(url, completion: completion)
     }
 }
+
+// MARK: - Hashable
+extension RMCharacterCollectionViewCellViewModel: Hashable, Equatable {
+    //Allows to check if a viewModel array contains a specific viewModel so that we don't override or duplicate them
+    
+    static func == (lhs: RMCharacterCollectionViewCellViewModel, rhs: RMCharacterCollectionViewCellViewModel) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(characterName)
+        hasher.combine(characterStatus)
+        hasher.combine(characterImageUrl)
+    }
+}
